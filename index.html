@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LANÇAMENTO DO FUSCA</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <span id="contador"></span>
+
+    <div class="caixa-texto">
+        <h1><strong>UM POUCO SOBRE NOSSA MAQUINA</strong></h1>
+        <br>
+
+        <h3><strong>O Fusca é muito mais que um carro. É uma memória afetiva sobre rodas, um símbolo da cultura
+                automotiva
+                brasileira. Em 1979, ele já era um fenômeno — agora, volta como ícone retrô que atravessa gerações com
+                charme e simplicidade.
+                Robustez, economia e mecânica confiável são marcas registradas do Fusca. Ele foi feito para durar, com
+                peças
+                simples, fácil manutenção e um motor que faz história. Compacto por fora, espaçoso por dentro — um
+                verdadeiro parceiro para todas as ocasiões.
+            </strong></h3>
+
+        <br>
+        <br>
+        <h1><strong>UM CARRO OU UM AVIÃO?</strong></h1>
+        <br>
+        <H3>
+            <p></p>Se você já ouviu o ronco do motor do Fusca, sabe: ele lembra o som de um avião antigo.</p> Isso não é
+            coincidência —
+            o motor boxer refrigerado a ar tem herança aeronáutica. Seu desempenho todo-terreno e estabilidade em
+            qualquer
+            tipo de solo fazem dele quase um jato sobre o asfalto.
+        </H3>
+        <br>
+        <br>
+
+        <h1>TUDO QUE VOCÊ PRECISA, POREM, MUITO MELHOR</h1>
+        <br>
+        <H3>Motor: 1.3 Boxer 4 cilindros, refrigerado a ar
+            Potência: 46 cv
+            Velocidade Máxima: 125 km/h
+            Câmbio: Manual de 4 marchas
+            Consumo médio: até 12 km/l
+            Tração: Traseira
+            Peso: 800 kg 😮😮</H3>
+    </div>
+
+
+</head>
+
+<body>
+    <div class="carrossel">
+        <button class="carrossel-btn" id="anterior">&#8592;</button>
+        <div class="carrossel-fotos">
+            <img src="fuscacapa.jpg" alt="fusca.png" class="ativa">
+            <img src="fuscafrente.jpg" alt="fuscafrente.png">
+            <img src="fuscajato.jpg" alt="Fuscajato">
+            <img src="fuscaviao.jpg" alt="Fuscaviao">
+        </div>
+        <button class="carrossel-btn" id="proximo">&#8594;</button>
+    </div>
+
+    <script>
+        const fotos = document.querySelectorAll('.carrossel-fotos img');
+        let atual = 0;
+
+        function mostrarFoto(indice) {
+            fotos.forEach((img, i) => img.classList.toggle('ativa', i === indice));
+        }
+
+        document.getElementById('proximo').onclick = () => {
+            atual = (atual + 1) % fotos.length;
+            mostrarFoto(atual);
+        };
+        document.getElementById('anterior').onclick = () => {
+            atual = (atual - 1 + fotos.length) % fotos.length;
+            mostrarFoto(atual);
+        };
+
+
+        mostrarFoto(atual);
+    </script>
+</body>
+
+</html>
